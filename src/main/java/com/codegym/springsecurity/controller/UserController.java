@@ -14,12 +14,12 @@ public class UserController {
     public ModelAndView index(){
         return new ModelAndView("/index");
     }
-    @GetMapping
+    @GetMapping("/user")
     public ModelAndView user(Principal principal){
         System.out.println(principal.getName());
         return new ModelAndView("/user");
     }
-    @GetMapping
+    @GetMapping("/admin")
     public ModelAndView admin(){
         SecurityContext context = SecurityContextHolder.getContext();
         System.out.println(context.getAuthentication().getName());
